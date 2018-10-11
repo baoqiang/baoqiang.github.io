@@ -4,6 +4,11 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <h3 class="site-title">
+        {% for page_name in site.pages_list %}
+        &nbsp;&nbsp;&nbsp;<small><a href="/{{ page_name | downcase }}">{{ page_name }}</a></small>
+        {% endfor %}
+      </h3>
 
     {%- if page_paths -%}
       <nav class="site-nav">
