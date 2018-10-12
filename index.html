@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://segen.coding.me/2018/10/12/hello-world/" data-id="cjn4v4m7k0005v9r93wiaosz1" class="article-share-link">Share</a>
+      <a data-url="https://segen.coding.me/2018/10/12/hello-world/" data-id="cjn5avc8i0005tyr9qpcvd5zs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,10 +133,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>目录<br>{:toc}</li>
-</ul>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>首先找到数组中最小的元素，将它和第一个元素交换位置（如果第一个元素就是最小的元素那么就它和自己交换位置）。再次，在剩下的元素中找到最小元素，将它与数组第二个位置交换位置。如此往复，直到将整个数组排序。因为它在不断的选择剩余元素中的最小者。</p>
+        <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>首先找到数组中最小的元素，将它和第一个元素交换位置（如果第一个元素就是最小的元素那么就它和自己交换位置）。再次，在剩下的元素中找到最小元素，将它与数组第二个位置交换位置。如此往复，直到将整个数组排序。因为它在不断的选择剩余元素中的最小者。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">3</span>, <span class="number">20</span>, <span class="number">19</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">20</span>&#125;;</span><br><span class="line">        System.out.print(<span class="string">"before: "</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.print(arr[i] + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> n = arr.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> min = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &lt; arr[min]) &#123;</span><br><span class="line">                    min = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i != min) &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">                arr[i] = arr[min];</span><br><span class="line">                arr[min] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">""</span>);</span><br><span class="line">        System.out.print(<span class="string">"after:  "</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.print(arr[i] + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p> 对于长度为 <code>N</code> 的数组，选择排序大约需要 <code>N^2/2</code> 次比较和 <code>N</code> 次交换。</p>
@@ -150,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://segen.coding.me/2018/10/10/2018-10-10-selection-sort/" data-id="cjn4v4m7j0004v9r9ti1zjrn9" class="article-share-link">Share</a>
+      <a data-url="https://segen.coding.me/2018/10/10/2018-10-10-selection-sort/" data-id="cjn5avc8g0004tyr90ickcwuy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li></ul>
@@ -201,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://segen.coding.me/2018/10/10/2018-10-10-algrithms-data-structures/" data-id="cjn4v4m7h0003v9r94qpkzroe" class="article-share-link">Share</a>
+      <a data-url="https://segen.coding.me/2018/10/10/2018-10-10-algrithms-data-structures/" data-id="cjn5avc8f0003tyr9tdnwbj6o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://segen.coding.me/2018/05/14/2018-04-14-spring-boot-quick-start/" data-id="cjn4v4m780000v9r9eek36lbc" class="article-share-link">Share</a>
+      <a data-url="https://segen.coding.me/2018/05/14/2018-04-14-spring-boot-quick-start/" data-id="cjn5avc870000tyr9l2bduy0e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://segen.coding.me/2018/05/14/2018-05-14-gradle-guick-start/" data-id="cjn4v4m7d0001v9r9mi4ne900" class="article-share-link">Share</a>
+      <a data-url="https://segen.coding.me/2018/05/14/2018-05-14-gradle-guick-start/" data-id="cjn5avc8b0001tyr9dyj02zyr" class="article-share-link">Share</a>
       
       
     </footer>
