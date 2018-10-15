@@ -489,7 +489,7 @@
 <p>对于 $N$ 个触点，加权 <strong>quick-union</strong> 算法构造的森林中的任意节点的深度最多为 $lgN$。</p>
 </blockquote>
 <blockquote>
-<p>对于加权 <strong>quick-union</strong> 算法和 $N$ 个触点，在最坏的情况下 <strong>find()</strong>, <strong>connected()</strong> 和 <strong>union()</strong> 的成本的增长的数量级为 <code>$lgN$</code>。</p>
+<p>对于加权 <strong>quick-union</strong> 算法和 $N$ 个触点，在最坏的情况下 <strong>find()</strong>, <strong>connected()</strong> 和 <strong>union()</strong> 的成本的增长的数量级为 $lgN$。</p>
 </blockquote>
 <p>对于动态连通性问题，加权 <strong>quick-union</strong> 算法是三种算法中唯一可以解决大型实际问题的算法。</p>
 <p>只要多写几行代码，我们所得到的程序在处理实际应用中的大型动态连通性问题时就会比简单的算法快数百万倍。</p>
@@ -850,6 +850,37 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
 
   
   
