@@ -161,7 +161,7 @@
 <meta property="og:site_name" content="Start now">
 <meta property="og:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-15T03:53:47.638Z">
+<meta property="og:updated_time" content="2018-10-15T06:16:51.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Boot quick start">
 <meta name="twitter:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyl">
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-15 11:53:47" itemprop="dateModified" datetime="2018-10-15T11:53:47+08:00">2018-10-15</time>
+                <time title="修改时间：2018-10-15 14:16:51" itemprop="dateModified" datetime="2018-10-15T14:16:51+08:00">2018-10-15</time>
               
             
           </span>
@@ -458,6 +458,17 @@
           
 
           
+          
+             <span id="/2018/05/14/spring-boot-quick-start/" class="leancloud_visitors" data-flag-title="Spring Boot quick start">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -821,27 +832,83 @@
   
 
   
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "h9CQMFdoyIPhQO6mzxPLQPkP-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "h9CQMFdoyIPhQO6mzxPLQPkP-gzGzoHsz",
+                'X-LC-Key': "qo6ENDghadE1KcK15zAXXdza",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
 
   
 
   
-  
-
-  
-  
-
-  
-
 
   
   
 
   
   
-  
-  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
 
+  
+
+
+  
+  
+
+  
 
   
 
